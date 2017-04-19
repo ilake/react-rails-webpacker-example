@@ -1,24 +1,39 @@
-# README
+# react-rails and webpacker sample application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a very basic Rails application to showcase usage of
+[react-rails](https://github.com/reactjs/react-rails) and [webpacker](https://github.com/rails/webpacker).
 
-Things you may want to cover:
+Please read their documentation for more details.
 
-* Ruby version
+## Usage
 
-* System dependencies
+First, clone this repository and install dependancies :
 
-* Configuration
+```
+$ cd react-rails-webpacker-example
+$ bundle
+$ ./bin/yarn
+$ rake db:create;rake db:migrate
+```
 
-* Database creation
+You then need to run webpack dev server to serve the assets :
 
-* Database initialization
+```
+$ ./bin/webpack-dev-server
+```
 
-* How to run the test suite
+Now you can run the Rails app :
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+$ ./bin/rails server
+```
 
-* Deployment instructions
+Finally open http://localhost:3000/ in your browser.
 
-* ...
+## Notice
+
+The `react_component` method use component path not its class name.
+
+```
+<%= react_component("posts/paper", { title: "Hello" }) %>
+```
